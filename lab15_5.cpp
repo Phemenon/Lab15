@@ -18,5 +18,42 @@ int main(){
 	return 0;
 }
 
-//Do not modify the code above this line
-//Write definition of shuffle() using pointer after this line. 
+void shuffle(int *a,int *b,int *c,int *d){
+    int n[4] = {};
+    for(int i=0; i<4; i++)
+    {
+        while(true)
+        {
+            int r = rand()%4;
+            int m;
+            switch(r)
+            {
+                case 0:
+                    m = *a;
+                    break;
+                    
+                case 1:
+                    m = *b;
+                    break;
+                    
+                case 2:
+                    m = *c;
+                    break;
+                    
+                case 3:
+                    m = *d;
+                    break;
+                    
+                default:
+                    break;
+            }
+            if(m!= n[0] && m!= n[1] && m!= n[2] && m!= n[3])
+            {
+                n[i] = m;
+                break;
+            }
+        }
+    }
+    *a=n[0];*b=n[1];*c=n[2];*d=n[3];
+    
+}
